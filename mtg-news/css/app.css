@@ -1,0 +1,80 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #191c29;
+}
+
+.news-carousel {
+    display:flex;
+    flex-direction:row;
+    align-items:stretch;
+    overflow:hidden;
+    width:calc(100% - 100px);
+    min-width:600px;
+    max-width:900px;
+    height:400px;
+    gap:20px;
+}
+
+/* -----------> Handle Cards */
+.news{
+    cursor: pointer;
+    border-radius: 15px;
+    background-size:auto 120%;
+    background-position:center;
+    
+    position: relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction: column-reverse;
+    min-width:60px;
+    transition:1s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+.news:not(.active){
+    border-radius:30px;
+}
+.news.active {
+    flex-grow:10000;
+    transform:scale(1);
+    max-width:600px;
+    margin:0px;
+    border-radius:40px;
+    border-radius: 15px;
+}
+
+/* -----------> Handle Masks */
+.news-mask{
+    background-color: #282b30;
+    opacity:0.6;
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+.news.active .news-mask{
+    opacity:0;
+}
+
+/* -----------> Handle infos */
+.news-info{
+    color:#fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 0 0 1em 1em;
+}
+.news-info-title{
+    font-weight:bold;
+    font-size:2rem;
+    text-transform: uppercase;
+}
+.news-info-sub{
+    font-size:0.9rem;
+}
+.news .news-info{
+    display:none;
+}
+.news.active  .news-info{
+    display:block;
+}
