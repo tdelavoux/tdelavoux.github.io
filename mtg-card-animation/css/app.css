@@ -1,0 +1,92 @@
+:root {
+    --card: url(https://tools.toywiz.com/_images/_webp/_products/lg/mtgknd098gravelighter.webp);
+}
+
+.card {
+    width: 71.5vw;
+    height: 100vw;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+    border-radius: 5% / 3.5%;
+    transition: transform 0.5s ease, box-shadow 0.2s ease;
+    will-change: transform, filter;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transform-origin: center;
+}
+
+.foil:after {
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/13471/sparkles.gif");
+    background-position: center;
+    opacity: 1;
+    z-index: 2;
+}
+
+.foil2::before{
+    display: block;
+    content: '';
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    z-index: 99;
+    background: linear-gradient(-90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.2) 42%, rgba(255,255,255,0) 60%);
+    will-change: transform;
+    transition: transform .40s cubic-bezier(0.18, 0.9, 0.58, 1);
+}
+
+.card:before,
+.card:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    opacity: .5;
+    mix-blend-mode: color-dodge;
+    transition: all .33s ease;
+}
+
+.card:hover {
+    animation: none;
+    transition: box-shadow 0.1s ease-out;
+}
+
+.card {
+    background-image: var(--card);
+    font-size: 2vh;
+    width: 20vh;
+    height: 27.5vh;
+    box-shadow: inset 0 0 0 1px rgba(white,0.4), 0 25px 15px -10px rgba(0, 0, 0, 0.5);
+    animation: none;
+}
+
+html, body {
+    height: 100%;
+    background-color: #333844;
+    padding: 0;
+    z-index: 1;
+
+}
+
+.demo,
+.cards { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    perspective: 2000px;
+    position: relative;
+    z-index: 1;
+    transform: translate3d(0.1px, 0.1px, 0.1px )
+}
+.demo {
+    flex-direction: row;
+    justify-content: center;
+}
