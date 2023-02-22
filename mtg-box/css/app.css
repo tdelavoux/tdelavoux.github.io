@@ -1,0 +1,73 @@
+:root{
+    --w: 350px;
+    --h: 250px;
+  
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #191c29;
+}
+
+/* 3D Cube */
+.space3d {
+    perspective: 1000px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    display: inline-block;
+}
+._3dbox {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateX(-16deg) rotateY(24deg);
+}
+._3dface {
+    overflow: hidden;
+    position: absolute;
+    box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
+    color: #333;
+    opacity: 0.8;
+    background-size:cover;
+    background-position:center;
+}
+._3dface--front {
+    width: var(--w);
+    height: var(--h);
+    transform: translate3d(0, 0, 125px);
+    border-radius: 5px 5px 10px 10px;  
+}
+._3dface--top {
+    width: var(--w);
+    height: var(--h);
+    transform: rotateX(90deg) translate3d(0, 0, 125px);
+    border-radius: 23px;
+}
+._3dface--left {
+    width: var(--h);
+    height: var(--h);
+    left: 50%;
+    margin-left: -125px;
+    transform: rotateY(-90deg) translate3d(0px, -1px, 125px);
+    border-radius:25px 14px 10px 20px;
+}
+._3dface--front {
+    background-image: url(../img/front.jpg);
+    
+}
+._3dface--left {
+    background-image: url(../img/left.webp);
+    background-color:#a4998e;
+}
+._3dface--top {
+    background-image: url(../img/top.jpg);
+}
